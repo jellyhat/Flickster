@@ -21,9 +21,11 @@ import org.parceler.Parcels;
 
 import cz.msebera.android.httpclient.Header;
 
+import static com.example.flickster.R.string.youtubekey;
+
 public class DetailActivity extends YouTubeBaseActivity {
 
-    public static final String YOUTUBE_API_KEY = "AIzaSyC6HoSSMJAcyf8aCTpcYkOKljOBhICCUs0";
+    String YOUTUBE_API_KEY;
     private static final String TRAILERS_API = "https://api.themoviedb.org/3/movie/%d/videos?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
     private static final String MOVIE_GENRES = "http://api.themoviedb.org/3/genre/movie/list?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
     TextView tvTitle;
@@ -44,6 +46,7 @@ public class DetailActivity extends YouTubeBaseActivity {
         ratingBar = findViewById(R.id.ratingBar);
         tvRelease = findViewById(R.id.release);
         tvGenres = findViewById(R.id.Genres);
+        YOUTUBE_API_KEY = getString(R.string.youtubekey);
         //String title = getIntent().getStringExtra("title");
         youTubePlayerView = findViewById(R.id.player);
         movie = (Movie) Parcels.unwrap(getIntent().getParcelableExtra("movie"));
